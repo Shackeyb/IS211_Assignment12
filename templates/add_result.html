@@ -1,0 +1,18 @@
+<form method="POST">
+    Student:
+    <select name="student_id">
+      {% for s in students %}
+        <option value="{{ s.id }}">{{ s.first_name }} {{ s.last_name }}</option>
+      {% endfor %}
+    </select><br>
+  
+    Quiz:
+    <select name="quiz_id">
+      {% for q in quizzes %}
+        <option value="{{ q.id }}">{{ q.subject }} ({{ q.date }})</option>
+      {% endfor %}
+    </select><br>
+  
+    Score: <input type="number" name="score" required><br>
+    <input type="submit" value="Add Result">
+  </form>

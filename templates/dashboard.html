@@ -1,0 +1,26 @@
+<h2>Students</h2>
+<a href="{{ url_for('add_student') }}">Add Student</a>
+<table>
+  {% for s in students %}
+    <tr>
+      <td>{{ s.id }}</td>
+      <td>{{ s.first_name }} {{ s.last_name }}</td>
+      <td><a href="{{ url_for('view_student', student_id=s.id) }}">View Results</a></td>
+    </tr>
+  {% endfor %}
+</table>
+
+<h2>Quizzes</h2>
+<a href="{{ url_for('add_quiz') }}">Add Quiz</a>
+<table>
+  {% for q in quizzes %}
+    <tr>
+      <td>{{ q.id }}</td>
+      <td>{{ q.subject }}</td>
+      <td>{{ q.num_questions }}</td>
+      <td>{{ q.date }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<a href="{{ url_for('add_result') }}">Add Quiz Result</a>
